@@ -2,7 +2,10 @@
 
 import os, sys
 
-torrentls = os.listdir("/stor/torrents")
+torrentfolder = "/stor/torrents"
+dest = "/stor/plex/anime"
+
+torrentls = os.listdir(torrentfolder)
 
 print(torrentls)
 
@@ -48,5 +51,5 @@ i = 0
 while i < len(unixname):
     command = "curl -X POST -H \"Content-Type: application/json\" -d \'{\"value1\":\"" + torrentls[i] + "\"}\' https://maker.ifttt.com/trigger/horriblesubs/with/key/nA_Uud9sg4LCHfhFxtXMBkJJRY4v28s33GqfHmdgU0J"
     os.system(command)
-    os.system("mv /stor/torrents/*" + str(unixname[i]) + "*.mkv /stor/plex/anime/" + str(animefolders[i]))
+    os.system("mv " + torrentfolder + "*" + str(unixname[i]) + "*.mkv " + dest + str(animefolders[i]))
     i += 1

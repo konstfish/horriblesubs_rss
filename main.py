@@ -7,13 +7,14 @@ import sys
 import os
 
 animlst =  ['Sword Art Online - Alicization', 'Zombieland Saga', 'Tensei Shitara Slime Datta Ken', 'SSSS.Gridman']
+dest = "/stor/plex/anime"
 
 feed_name = 'HorribleSubs'
 url = 'http://www.horriblesubs.info/rss.php?res=1080'
 
 d = feedparser.parse(url)
 
-animels = os.listdir("/stor/plex/anime/")
+animels = os.listdir(dest)
 
 numlist = ["0","1","2","3","4","5","6","7","8","9"]
 
@@ -33,11 +34,11 @@ while i != len(d['entries']):
             strnew = strnew.replace(" ", "_")
 
             try:
-                animfold = os.listdir("/stor/plex/anime/" + strnew + "/")
+                animfold = os.listdir(dest + strnew + "/")
             except:
-                os.system("mkdir /stor/plex/anime/" + strnew + "/")
+                os.system("mkdir " + dest + strnew + "/")
 
-            animfold = os.listdir("/stor/plex/anime/" + strnew + "/")
+            animfold = os.listdir(dest + strnew + "/")
 
             if(d['entries'][i]['title'] not in animfold):
                 print(d['entries'][i]['title'])

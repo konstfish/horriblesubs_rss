@@ -49,7 +49,9 @@ print(unixname)
 
 i = 0
 while i < len(unixname):
-    command = "curl -X POST -H \"Content-Type: application/json\" -d \'{\"value1\":\"" + torrentls[i] + "\"}\' https://maker.ifttt.com/trigger/horriblesubs/with/key/nA_Uud9sg4LCHfhFxtXMBkJJRY4v28s33GqfHmdgU0J"
+    # if you want some sort if ifttt notification every time something is added
+    # uncomment this line and add your maker link
+    #command = "curl -X POST -H \"Content-Type: application/json\" -d \'{\"value1\":\"" + torrentls[i] + "\"}\' https://maker.ifttt.com/trigger/horriblesubs/with/key/xxx"
     os.system(command)
     os.system("mv " + torrentfolder + "*" + str(unixname[i]) + "*.mkv " + dest + str(animefolders[i]))
     i += 1

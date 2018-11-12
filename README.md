@@ -1,6 +1,6 @@
 # horriblesubs_rss
 
-Python script that reads new entries from the [HorribleSubs RSS Feed](http://www.horriblesubs.info/rss.php?res=1080) and downloads them using the [Transmission Web Interface](https://transmissionbt.com/)
+Python script that reads new entries from the [HorribleSubs RSS Feed](http://www.horriblesubs.info/rss.php?res=1080) and downloads them using the [Transmission Web Interface](https://transmissionbt.com/).
 
 ## Requirements
 [feedparser](https://pypi.org/project/feedparser/).
